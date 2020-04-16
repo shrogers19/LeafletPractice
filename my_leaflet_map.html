@@ -39,7 +39,8 @@
 
         // L.geoJSON(uncwell).addTo(map)
         // create custom icon variable
-        var uncIcon = L.icon({ // notice the L.icon which is a Leaflet object with properties iconUrl: 'https://faopharmacy.unc.edu/files/2018/04/Old-Well-Icon-Example.png',
+        var uncIcon = L.icon({ // notice the L.icon which is a Leaflet object with properties 
+        iconUrl: 'https://faopharmacy.unc.edu/files/2018/04/Old-Well-Icon-Example.png',
         // this points to a jpg image obtained from the internet
         iconSize: [50,50], // size of the icon
         popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point. 
@@ -48,8 +49,8 @@
         var customPopup = "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>";
 
         L.geoJSON(uncwell, { // a
-        pointToLayer: function (feature, latlng) { // b return 
-        L.marker(latlng, {icon: uncIcon});}}) // c 
+        pointToLayer: function (feature, latlng) { // b 
+        return L.marker(latlng, {icon: uncIcon});}}) // c 
         .bindPopup(customPopup) // d
         addTo(map);
     
